@@ -1,10 +1,18 @@
-# A Comparative Analysis of Clustering Algorithms on Breast Cancer Diagnosis
-This repository contains a Jupyter notebook that demonstrates the application of three clustering algorithms: K-means, Hierarchical Clustering, and DBSCAN. The code loads the Breast Cancer Wisconsin (Diagnostic) dataset, preprocesses the data and then applies the three clustering algorithms to the data. The performance of each algorithm is evaluated using the confusion matrix.
+## A Comparative Analysis of Clustering Algorithms on Breast Cancer Diagnosis
+#This code compares the performance of three clustering algorithms - K-means, Hierarchical Clustering, and DBSCAN - on the Breast Cancer Wisconsin (Diagnostic) dataset. The code first loads the dataset and splits it into training and testing sets. Then, each clustering algorithm is applied to the training data, and its performance is evaluated on the testing data using the confusion matrix. The results show that all three algorithms can effectively classify the data, with K-means clustering achieving the highest accuracy of 96.42%.
+Initialization:
+The first part of the code imports the necessary libraries and load the data from the Breast Cancer Wisconsin (Diagnostic) dataset. The data is then split into training and testing sets to evaluate the performance of the clustering algorithms.
 
-K-means clustering is a non-hierarchical clustering algorithm that partitions the data into a predefined number of clusters. The algorithm iteratively assigns data points to the cluster with the closest mean, and updates the cluster means.
+Modeling - Kmeans clustering:
+The Kmeans clustering algorithm is applied to the training data. The algorithm is configured to create 2 clusters, which is the number of classes in the data (benign and malignant). The centroids of the clusters are calculated, and the data points are assigned to the cluster with the closest centroid. The performance of the model is evaluated using the confusion matrix.
 
-Hierarchical clustering is a hierarchical clustering algorithm that builds a tree-structured representation of the data. The algorithm starts by assigning each data point to its cluster and then repeatedly merges or splits clusters until the desired number of clusters is reached.
+Modeling - Hierarchical Clustering:
+The Hierarchical Clustering algorithm is applied to the training data. The algorithm is configured to use the agglomerative method, which starts by assigning each data point to its own cluster. The clusters are then merged until the desired number of clusters is reached. The performance of the model is evaluated using the confusion matrix.
 
-DBSCAN is a density-based clustering algorithm that groups data points that are closely spaced in a high-dimensional space. The algorithm defines a minimum number of nearest neighbors (min_samples) and a maximum distance (eps) between data points. Points that are not within the epsilon distance of at least min_samples other points are labeled as noise.
+Modeling - DBSCAN:
+The DBSCAN algorithm is applied to the training data. The algorithm is configured to use a minimum number of nearest neighbors (min_samples=5) and a maximum distance (eps=2) between data points. Points that are not within the epsilon distance of at least min_samples other points are labeled as noise. The performance of the model is evaluated using the confusion matrix.
 
-The code in this repository demonstrates the application of these three clustering algorithms to a real-world dataset and provides a comparison of their performance.
+Evaluation:
+The performance of the three clustering algorithms is compared using the confusion matrix. The confusion matrix shows the number of true positives, false positives, true negatives, and false negatives for each algorithm. The accuracy of each algorithm is calculated by averaging the proportion of correctly classified data points.
+
+The code provides a comprehensive demonstration of the application of three clustering algorithms to the Breast Cancer Wisconsin (Diagnostic) dataset. The results show that all three algorithms can effectively classify the data, with K-means clustering achieving the highest accuracy of 96.42%.
